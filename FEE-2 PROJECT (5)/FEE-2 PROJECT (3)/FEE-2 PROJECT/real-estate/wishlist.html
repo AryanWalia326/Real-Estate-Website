@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish List</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        .wishlist-section {
+            padding: 20px;
+        }
+
+        .wishlist-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .wishlist-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        .item-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .item-info {
+            padding-top: 10px;
+        }
+
+        .item-info h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .item-info p {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .remove-link {
+            display: block;
+            margin-top: 10px;
+            color: #ff0000;
+            text-decoration: none;
+        }
+
+        .remove-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Wish List</h1>
+        <p>Explore the items you've saved for later!</p>
+    </header>
+
+    <section class="wishlist-section">
+        <div class="wishlist-container">
+
+            <!-- Item 1 -->
+            <div class="wishlist-item">
+                <img src="https://www.tricityinfra.com/wp-content/uploads/2024/04/Real-estate.jpg" alt="Item 1" class="item-image">
+                <div class="item-info">
+                    <h3>Product Name 1</h3>
+                    <p>$499.99</p>
+                    <a href="#" class="btn" onclick="addToCart('Product Name 1', 499.99)">Add to Cart</a>
+                    <a href="#" class="remove-link" onclick="removeItem(this)">Remove</a>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="wishlist-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuoqPCghCjHZW4jj8CssU7TYbxUTe6_DieCQ&s" alt="Item 2" class="item-image">
+                <div class="item-info">
+                    <h3>Product Name 2</h3>
+                    <p>$799.99</p>
+                    <a href="#" class="btn" onclick="addToCart('Product Name 2', 799.99)">Add to Cart</a>
+                    <a href="#" class="remove-link" onclick="removeItem(this)">Remove</a>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="wishlist-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkKGy2frqTjt4X49JZlRdckK-NQR0tc4ZUgw&s" alt="Item 3" class="item-image">
+                <div class="item-info">
+                    <h3>Product Name 3</h3>
+                    <p>$599.99</p>
+                    <a href="#" class="btn" onclick="addToCart('Product Name 3', 599.99)">Add to Cart</a>
+                    <a href="#" class="remove-link" onclick="removeItem(this)">Remove</a>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="wishlist-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQqZlEiiEOANZdfOAINjSJYQQwlbiD-SIKJQ&s" alt="Item 4" class="item-image">
+                <div class="item-info">
+                    <h3>Product Name 4</h3>
+                    <p>$899.99</p>
+                    <a href="#" class="btn" onclick="addToCart('Product Name 4', 899.99)">Add to Cart</a>
+                    <a href="#" class="remove-link" onclick="removeItem(this)">Remove</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function addToCart(productName, price) {
+            alert(`${productName} has been added to your cart for $${price.toFixed(2)}!`);
+        }
+
+        function removeItem(element) {
+            const item = element.parentElement.parentElement; // Get the parent wishlist-item
+            item.remove(); // Remove the item from the DOM
+            alert('Item removed from your wishlist!');
+        }
+    </script>
+
+</body>
+</html>

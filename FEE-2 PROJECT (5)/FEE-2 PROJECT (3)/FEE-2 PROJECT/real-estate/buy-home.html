@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Finder</title>
+
+  <!-- Minimalist CSS for a Real Estate Website -->
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #3498db;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #21618c;
+    }
+
+    /* Button Styles */
+    button {
+      background-color: #2980b9; /* Updated to match the Rent Home button */
+      color: #fff;
+      border: none;
+      padding: 15px 30px; /* Increased padding for a more substantial look */
+      border-radius: 8px; /* Slightly larger radius for rounded corners */
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s; /* Added transform for hover effect */
+    }
+    button:hover {
+      background-color: #1f618d; /* Darker blue on hover */
+      transform: scale(1.05); /* Scale effect on hover */
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Section */
+    .header {
+      background: #2c3e50;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 1.3rem;
+    }
+
+    /* Search Section */
+    .search {
+      padding: 40px 0;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: -40px;
+      z-index: 1;
+      position: relative;
+    }
+    .search form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .search input, .search select {
+      padding: 15px;
+      width: calc(33.33% - 20px);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    /* Featured Properties */
+    .featured-properties {
+      padding: 60px 0;
+      background-color: #f5f5f5;
+    }
+    .properties-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .property-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    .property-card:hover {
+      transform: translateY(-5px);
+    }
+    .property-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .property-card h3 {
+      padding: 15px;
+      font-size: 1.5rem;
+    }
+    .property-card p {
+      padding: 0 15px 15px;
+      color: #27ae60;
+      font-size: 1.2rem;
+    }
+
+    /* Footer Section */
+    .footer {
+      background: #2c3e50;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .footer ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    .footer ul li a {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <h1>Find Your Perfect Home</h1>
+      <p>Discover your next dream property from exclusive listings</p>
+    </div>
+  </header>
+
+  <!-- Search Section -->
+  <section class="search">
+    <div class="container">
+      <form action="/search-results.html" method="GET">
+        <input type="text" name="location" placeholder="Enter location" required>
+        <input type="number" name="min-price" placeholder="Min price" required>
+        <input type="number" name="max-price" placeholder="Max price" required>
+        <select name="property-type">
+          <option value="">Select Type</option>
+          <option value="house">House</option>
+          <option value="apartment">Apartment</option>
+          <option value="villa">Villa</option>
+        </select>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Featured Properties Section -->
+  <section class="featured-properties">
+    <div class="container">
+      <h2>Featured Listings</h2>
+
+      <div class="properties-grid">
+        <div class="property-card">
+          <img src="https://res.cloudinary.com/luxuryp/images/w_1280,c_limit,f_auto,q_auto/fogwm9fcxwf9ofaxghuo/frid4_19202721200" alt="Luxury Home">
+          <h3>Luxury Home in Beverly Hills</h3>
+          <p>$2,000,000</p>
+        </div>
+        <div class="property-card">
+          <img src="https://images.stockcake.com/public/8/1/8/818457d9-499c-4c46-aeb1-20cbbc4da419_medium/luxurious-urban-apartment-stockcake.jpg" alt="Modern Apartment">
+          <h3>Modern City Apartment</h3>
+          <p>$850,000</p>
+        </div>
+        <div class="property-card">
+          <img src="https://img.freepik.com/premium-photo/beachfront-villa-with-amazing-sunset-view_605022-16117.jpg" alt="Beachside Villa">
+          <h3>Beachside Villa</h3>
+          <p>$1,500,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 HomeVerse. All rights reserved.</p>
+      <ul>
+        <li><a href="terms.html">Privacy Policy</a></li>
+        <li><a href="mailto:info@homeverse.com">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
